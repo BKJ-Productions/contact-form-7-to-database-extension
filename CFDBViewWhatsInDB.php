@@ -68,7 +68,11 @@ class CFDBViewWhatsInDB extends CFDBView {
         }
 
         // Sanitized version of $currSelection for display on the page
-        $currSelectionEscaped = htmlspecialchars($currSelection, ENT_QUOTES, 'UTF-8');
+        if ($currSelection) {
+            $currSelectionEscaped = htmlspecialchars($currSelection, ENT_QUOTES, 'UTF-8');
+        } else {
+            $currSelectionEscaped = '';
+        }
 
         // If there is only one form in the DB, select that by default
         if (!$currSelection && count($formsList) == 1) {
