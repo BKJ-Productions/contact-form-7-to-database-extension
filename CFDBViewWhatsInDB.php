@@ -126,7 +126,7 @@ class CFDBViewWhatsInDB extends CFDBView {
         ?>
     <table id="cfdb-controls" width="100%" cellspacing="20">
         <tr>
-            <td align="left" valign="top">
+            <td style="text-align: left;" valign="top">
                 <form method="get" action="<?php echo $_SERVER['REQUEST_URI']?>" name="displayform" id="displayform">
                     <input type="hidden" name="page" value="<?php echo esc_attr($_REQUEST['page'] ? $_REQUEST['page'] : '') ?>"/>
                     <select name="form_name" id="form_name" onchange="this.form.submit();">
@@ -140,7 +140,7 @@ class CFDBViewWhatsInDB extends CFDBView {
                     </select>
                 </form>
             </td>
-            <td align="center" valign="top">
+            <td style="text-align: center;" valign="top">
                 <?php if ($currSelection) { ?>
                 <script type="text/javascript" language="Javascript">
                     var showHideExportLinkDelimiter = function() {
@@ -286,7 +286,7 @@ class CFDBViewWhatsInDB extends CFDBView {
             if ($currSelection && $canEdit && $useDataTables) {
         ?>
         <tr>
-            <td align="left" colspan="3">
+            <td style="text-align: left;" colspan="3">
                 <span id="edit_controls">
                     <a href="https://cfdbplugin.com/?page_id=459" target="_cfdbedit"><?php  echo esc_html(__('Edit Data Mode', 'contact-form-7-to-database-extension')); ?></a>
                 </span>
@@ -386,7 +386,7 @@ class CFDBViewWhatsInDB extends CFDBView {
         ?>
         <script type="text/javascript">
             (function ($) {
-                var url = "admin.php?page=<?php echo $plugin->getDBPageSlug() ?>&form_name=<?php echo urlencode($currSelection) ?>&submit_time=";
+                var url = "admin.php?page=<?php echo $plugin->getDBPageSlug() ?>&form_name=<?php echo $currSelection ? urlencode($currSelection) : '' ?>&submit_time=";
                 $('td[title="Submitted"] div').each(
                         function () {
                             var submitTime = $(this).attr('id').split(",");
@@ -398,7 +398,7 @@ class CFDBViewWhatsInDB extends CFDBView {
         <table style="width:100%;">
             <tbody>
             <tr>
-                <td align="center" colspan="4">
+                <td style="text-align: center;" colspan="4">
                     <span style="font-size:x-small; font-style: italic;">
                     <?php echo esc_html(__('Did you know: You can add this data to your posts and pages using these shortcodes:', 'contact-form-7-to-database-extension')); ?>
                         <br/>
@@ -412,7 +412,7 @@ class CFDBViewWhatsInDB extends CFDBView {
                 </td>
             </tr>
             <tr>
-                <td align="center" colspan="4">
+                <td style="text-align: center;" colspan="4">
                         <span style="font-size:x-small; font-style: italic;">
                             <?php echo esc_html(__('Would you like to help translate this plugin into your language?', 'contact-form-7-to-database-extension')); ?>
                             <a target="_i18n"
