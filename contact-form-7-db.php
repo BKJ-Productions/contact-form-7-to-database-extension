@@ -1,8 +1,8 @@
 <?php
 /*
-   Plugin Name: Contact Form DB - BKJ fork
+   Plugin Name: Contact Form DB: BKJ fork
    Plugin URI: https://wordpress.org/extend/plugins/contact-form-7-to-database-extension/
-   Version: 2.10.38
+   Version: 2.10.39
    Author: Michael Simpson
    Description: Save form submissions to the database from <a href="https://wordpress.org/extend/plugins/contact-form-7/">Contact Form 7</a>, <a href="https://wordpress.org/extend/plugins/si-contact-form/">Fast Secure Contact Form</a>, <a href="https://wordpress.org/extend/plugins/jetpack/">JetPack Contact Form</a> and <a href="https://www.gravityforms.com">Gravity Forms</a>. Includes exports and short codes. | <a href="admin.php?page=CF7DBPluginSubmissions">Data</a> | <a href="admin.php?page=CF7DBPluginShortCodeBuilder">Short Codes</a> | <a href="admin.php?page=CF7DBPluginSettings">Settings</a> | <a href="https://cfdbplugin.com/">Reference</a>
    Text Domain: contact-form-7-to-database-extension
