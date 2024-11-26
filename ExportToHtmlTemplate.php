@@ -188,12 +188,12 @@ class ExportToHtmlTemplate extends ExportBase implements CFDBExport {
                             case 'name':
                             default:
                                 if (isset($this->dataIterator->row[$aCol])) {
-                                    $replacements[] = htmlentities($this->dataIterator->row[$aCol], null, 'UTF-8');
+                                    $replacements[] = htmlentities($this->dataIterator->row[$aCol], ENT_COMPAT, 'UTF-8');
                                 }
                         }
                     } else {
                         if (isset($this->dataIterator->row[$aCol])) {
-                            $replacements[] = htmlentities($this->dataIterator->row[$aCol], null, 'UTF-8');
+                            $replacements[] = htmlentities($this->dataIterator->row[$aCol], ENT_COMPAT, 'UTF-8');
                         } else {
                             $replacements[] = '';
                         }
