@@ -851,7 +851,8 @@ class CF7DBPlugin extends CF7DBPluginLifeCycle implements CFDBDateFormatter {
 
                 // Check if this is a file upload field
                 $didSaveFile = false;
-                if ($cf7->uploaded_files && isset($cf7->uploaded_files[$nameClean])) {
+                // add property check to prevent warning
+                if (property_exists($cf7, 'uploaded_files') && $cf7->uploaded_files && isset($cf7->uploaded_files[$nameClean])) {
                     $foundUploadFiles[] = $nameClean;
                     $filePath = $cf7->uploaded_files[$nameClean];
                     if ($filePath) {
@@ -881,7 +882,7 @@ class CF7DBPlugin extends CF7DBPluginLifeCycle implements CFDBDateFormatter {
             // Since Contact Form 7 version 3.1, it no longer puts the names of the files in $cf7->posted_data
             // So check for them only only in $cf7->uploaded_files
             // Update: This seems to have been reversed back to the original in Contact Form 7 3.2 or 3.3
-            if ($cf7->uploaded_files && is_array($cf7->uploaded_files)) {
+            if (property_exists($cf7, 'uploaded_files') && $cf7->uploaded_files && is_array($cf7->uploaded_files)) {
                 foreach ($cf7->uploaded_files as $field => $filePath) {
                     if (!in_array($field, $foundUploadFiles) &&
                             $filePath &&
